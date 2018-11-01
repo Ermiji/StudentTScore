@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>List</title>
+</head>
+<body>
+<a href="/addstudent">Add a Student</a><br/>
+<a href="/add">Add a Score</a><br/>
+
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Major</th>
+
+        <th>Test Score</th>
+    </tr>
+    <tr th:each="testscore : ${testscores}">
+        <td th:text="${testscore.student.fname}"></td>
+        <td th:text="${testscore.student.lname}"></td>
+        <td th:text="${testscore.student.major}"></td>
+        <!--<td th:text="${testscore.student.testscores}"></td>-->
+        <td>
+            <a th:href="@{/update/{id}(id=${testscore.id})}">Update</a> -
+            <a th:href="@{/detail/{id}(id=${testscore.id})}">Details</a> -
+            <a th:href="@{/delete/{id}(id=${testscore.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

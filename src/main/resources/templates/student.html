@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Student Form</h1>
+
+<form action="#"
+      th:action="@{/processstudent}"
+      th:object="${student}"
+      method="post">
+
+    <input type="hidden" th:field="*{id}" />
+
+    First Name :<input type="text" th:field="*{fname}" />
+
+    <span th:if="${#fields.hasErrors('fname')}"
+          th:errors="*{fname}"></span><br />
+
+    Last Name :<input type="text" th:field="*{lname}" />
+
+    <span th:if="${#fields.hasErrors('lname')}"
+          th:errors="*{lname}"></span><br />
+
+    Major :<input type="text" th:field="*{major}" />
+
+    <span th:if="${#fields.hasErrors('major')}"
+          th:errors="*{major}"></span><br />
+
+    <input type="submit" value="Enter" />
+
+</form>
+
+</body>
+</html>
