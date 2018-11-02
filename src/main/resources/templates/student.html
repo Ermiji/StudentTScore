@@ -15,15 +15,15 @@
 
     <input type="hidden" th:field="*{id}" />
 
-    First Name :<input type="text" th:field="*{fname}" />
+    First Name :<input type="text" th:field="*{fName}" />
 
-    <span th:if="${#fields.hasErrors('fname')}"
-          th:errors="*{fname}"></span><br />
+    <span th:if="${#fields.hasErrors('fName')}"
+          th:errors="*{fName}"></span><br />
 
-    Last Name :<input type="text" th:field="*{lname}" />
+    Last Name :<input type="text" th:field="*{lName}" />
 
-    <span th:if="${#fields.hasErrors('lname')}"
-          th:errors="*{lname}"></span><br />
+    <span th:if="${#fields.hasErrors('lName')}"
+          th:errors="*{lName}"></span><br />
 
     Major :<input type="text" th:field="*{major}" />
 

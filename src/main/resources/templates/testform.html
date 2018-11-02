@@ -14,13 +14,13 @@
     <input type="hidden" th:field="*{id}" />
 
     Student:<select th:field="*{student}" class="form-control input-md">
-    <option th:each="option: ${students}"
-            th:value="${option.id}">[[${option.id}]]</option>
+            <option th:each="choose: ${students}"
+            th:value="${choose.id}">[[${choose.id}]]</option>
 </select><br/>
 
-    Subject :<input type="text" th:field="*{id}" />
-    <span th:if="${#fields.hasErrors('id')}"
-          th:errors="*{id}"></span><br/>
+    Subject :<input type="text" th:field="*{subject}" />
+    <span th:if="${#fields.hasErrors('subject')}"
+          th:errors="*{subject}"></span><br/>
 
     Date :<input type="text" th:field="*{date}" />
     <span th:if="${#fields.hasErrors('date')}"

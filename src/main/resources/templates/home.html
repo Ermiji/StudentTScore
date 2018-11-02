@@ -6,14 +6,12 @@
 </head>
 <body>
 
-<a href="/">Show All Scores</a><br/>
-Student :<span th:text="${testscore.student.id}" ></span><br />
-Title : <span th:text="${course.title}"></span><br/>
-Instructor : <span th:text="${course.instructor}"></span><br/>
-Description : <p th:text="${course.description}"></p>
-Credits : <span th:text="${course.credit}"></span><br/>
+<a href="/"><b>Show the scores and back to previous page</b></a><br/>
+Student :<span th:text="${testscore.id}" ></span><br />
+Subject :<span th:text="${testscore.subject}"/></span><br />
+Date :<span th:text="${testscore.date}"/></span><br />
+Test Score :<span th:text="${testscore.score}"/></span><br />
 
-<a th:href="@{/delete/{id}(id=${course.id})}">Delete this course</a>
 
 </body>
 </html>

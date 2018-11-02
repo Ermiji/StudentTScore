@@ -23,7 +23,6 @@ public class MainController {
     @RequestMapping("/")
     public String listCourses(Model model){
         model.addAttribute("testscores", testScoreRepository.findAll());
-//        model.addAttribute("students", studentRepository.findAll());
         return "list";
     }
 
@@ -45,8 +44,6 @@ public class MainController {
         return "redirect:/";
     }
 
-
-
     @GetMapping("/addstudent")
     public String studentForm(Model model){
         model.addAttribute("student", new Student());
@@ -59,16 +56,9 @@ public class MainController {
         if(result.hasErrors()){
             return "student";
         }
-//        if(studentRepository.findById(student.getId()) != null){
-////            model.addAttribute("");
-//            return "student";
-//        }
         studentRepository.save(student);
         return "redirect:/";
     }
-
-
-
 
     @RequestMapping("/detail/{id}")
     public String showStudent(@PathVariable("id") long id, Model model){
@@ -82,11 +72,4 @@ public class MainController {
         model.addAttribute("testscore", testScoreRepository.findById(id).get());
         return "testform";
     }
-
-    @RequestMapping("/delete/{id}")
-    public String delStudent(@PathVariable("id") long id){
-        testScoreRepository.deleteById(id);
-        return "redirect:/";
-    }
-
 }

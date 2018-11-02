@@ -8,24 +8,13 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String fname;
-    private String lname;
+    private String fName;
+    private String lName;
     private String major;
 
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL,
     fetch = FetchType.EAGER)
     public Set<TestScore> tscores;
-
-    public Student(String fname, String lname, String major, Set<TestScore> tscores) {
-        this.fname = fname;
-        this.lname = lname;
-        this.major = major;
-        this.tscores = tscores;
-    }
-
-    public Student() {
-    }
-
 
     public long getId() {
         return id;
@@ -35,20 +24,20 @@ public class Student {
         this.id = id;
     }
 
-    public String getFname() {
-        return fname;
+    public String getfName() {
+        return fName;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setfName(String fName) {
+        this.fName = fName;
     }
 
-    public String getLname() {
-        return lname;
+    public String getlName() {
+        return lName;
     }
 
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setlName(String lName) {
+        this.lName = lName;
     }
 
     public String getMajor() {
