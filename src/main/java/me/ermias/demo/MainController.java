@@ -68,7 +68,7 @@ public class MainController {
 
     @RequestMapping("/update/{id}")
     public String updateStudent(@PathVariable("id") long id, Model model){
-        model.addAttribute("subjects", studentRepository.findAll());
+        model.addAttribute("students", studentRepository.findAll());
         model.addAttribute("testscore", testScoreRepository.findById(id).get());
         return "testform";
     }
