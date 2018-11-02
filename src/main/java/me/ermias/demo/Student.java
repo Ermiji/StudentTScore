@@ -16,6 +16,17 @@ public class Student {
     fetch = FetchType.EAGER)
     public Set<TestScore> tscores;
 
+    public Student(String fName, String lName, String major,
+                   Set<TestScore> tscores) {
+        this.fName = fName;
+        this.lName = lName;
+        this.major = major;
+        this.tscores = tscores;
+    }
+
+    public Student() {
+    }
+
     public long getId() {
         return id;
     }

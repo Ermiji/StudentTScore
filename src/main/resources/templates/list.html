@@ -15,11 +15,15 @@
         <th>Major</th>
 
         <th>Test Score</th>
+
     </tr>
     <tr th:each="testscore : ${testscores}">
         <td th:text="${testscore.student.fName}"></td>
         <td th:text="${testscore.student.lName}"></td>
         <td th:text="${testscore.student.major}"></td>
+        <!--<td th:text="${testscore.subject}"></td>
+        <td th:text="${testscore.date}"></td>-->
+        <td th:text="${testscore.score}"></td>
 
         <td>
             <a th:href="@{/update/{id}(id=${testscore.id})}">Update</a>
